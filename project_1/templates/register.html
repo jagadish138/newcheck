@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+{% load static %}
+{% load bootstrap5 %}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="{% static 'css/file1.css' %}">
+   
+</head>
+<body >
+    
+    <nav class="navbar navbar-expand-lg bg-dark">
+        <div class="container-fluid">
+          <h1 class="navbar-brand title" >WOW</h1>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
+            <div class="navbar-nav ">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+              <a class="nav-link" href="#">Features</a>
+              <a class="nav-link" href="{% url 'login' %}">LogOut</a>
+              
+            </div>
+          </div>
+        </div>
+      </nav>
+    {% block content %}
+        <div class="det_reg ">
+            <form class="pass_form" method="POST">
+                    <h1 class="pass_Head">Enter your Details </h1>
+                {% csrf_token %}
+                {{s_form.as_p}}
+                <input type="submit" value="Save">
+            
+            </form>
+           
+        </div>
+
+
+    {% endblock %}
+</body>
+</html>

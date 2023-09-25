@@ -1,0 +1,9 @@
+{% extends 'register.html' %}
+
+{% block content%}
+{% for info in information %}
+<p>{{info.father}}
+    {{info.age}}</p>
+{% endfor %}
+
+{% endblock content%}

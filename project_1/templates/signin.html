@@ -1,0 +1,27 @@
+
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SignIn</title>
+<link rel="stylesheet" type="text/css" href="{% static 'css/file1.css' %}">
+</head>
+<body class="bg">
+    
+     <div class="">
+    <form method="POST" class="frm login_con">
+        <h1 class="title">WoW</h1>
+        {% csrf_token %}
+        {{s_form.as_p}}
+        <input type="submit" value="Login">
+        <button><a href="{% url 'signup' %}">SignUp</a></button>
+        <button><a href="{% url 'password' %}">Forgot Password</a></button>
+   
+      
+    </form>
+</div>
+
+</body>
+</html>
